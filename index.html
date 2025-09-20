@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="style.css">
+    <script src="form.js" defer></script>
     <title>Frontend Mentor | Contact form</title>
   </head>
   <body>
     <main>
       <h1>Contact Us</h1>
-      <form>
+      <form novalidate>
         <div class="form-group">
           <label for="fname">First Name</label>
           <input type="text" name="first-name" id="fname" required>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group">
           <label for="fname">Last Name</label>
           <input type="text" name="last-name" id="lname" required>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group span-all">
           <label for="email">Email</label>
-          <input type="email" name="email" id="email" required>
+          <input type="email" data-error="Please enter a valid email address" name="email" id="email" required>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <fieldset class="span-all">
@@ -36,48 +40,30 @@
             <input type="radio" name="query" id="support" value="support-request" required>
             <label for="support">Support Request</label>
           </div>
+          <span class="error-message" aria-live="polite"></span>
         </fieldset>
 
         <div class="form-group span-all">
           <label for="message">Message</label>
           <textarea name="message" id="message" required></textarea>
+          <span class="error-message" aria-live="polite"></span>
         </div>
 
         <div class="form-group span-all">
-          <input type="checkbox" name="consent" id="consent">
+          <input type="checkbox" data-error="You must consent to us contacting you to submit this form" name="consent" id="consent" required>
           <label for="consent">I consent to being contacted by the team.</label>
+          <span class="error-message checkbox-error" aria-live="polite"></span>
         </div>
 
         <button class="span-all">Submit</button>
       </form>
     </main>
+    <dialog class="submit-modal">
+      <div class="check-icon">
+        <img src="assets/images/icon-success-check.svg" alt="checkbox icon">
+        Message Sent!
+      </div>
+      <p>Thanks for completing the form. We'll be in touch soon! </p>
+    </dialog>
   </body>
 </html>
-
-<!-- Contact Us
-
-  First Name
-  This field is required
-
-  Last Name
-  This field is required
-
-  Email Address
-  Please enter a valid email address
-  This field is required
-
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
-
-  Message
-  This field is required
-
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon! -->

@@ -32,6 +32,9 @@
     font-size: 1rem;
     font-family: var(--ff-base);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    color: var(--grey900);
   }
 
   input,
@@ -51,14 +54,19 @@
   main {
     padding: 2rem;
     max-inline-size: 700px;
-    margin-inline: auto;
+    margin: auto;
     background-color: var(--white);
     border-radius: 1rem;
+  }
+
+  h1 {
+    padding-bottom: .5rem;
   }
 
   form {
     display: grid;
     gap: 1rem;
+
     @media (width > 500px) {
       grid-template-columns: 1fr 1fr;
     }
@@ -76,10 +84,20 @@
     grid-template-columns: inherit;
   }
 
+  legend {
+    line-height: 2.5;
+  }
+
   textarea {
     box-sizing: content-box;
     height: 3lh;
     resize: block;
+  }
+
+  .form-group {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-template-columns: repeat(auto-fit, minmax())
   }
 
   fieldset:has([required]) legend,
@@ -123,6 +141,7 @@
     gap: 1ch;
   }
 
+  /* checks the radio button regardless of where in the container its clicked */
   .form-group:has([type="radio"]) {
     position: relative;
 
@@ -151,5 +170,39 @@
       background-color: var(--green900);
       cursor: pointer;
     }
+  }
+
+  input:user-invalid {
+    border-color: var(--red);
+  }
+
+  .error-message {
+    color: var(--red);
+    font-size: .83rem;
+  }
+
+  .error-message:empty {
+    display: none;
+  }
+}
+
+@layer modal {
+  .submit-modal {
+    background-color: var(--green900);
+    color: var(--white);
+    border: 0;
+    padding: 1rem;
+    border-radius: .5rem;
+    justify-self: center;
+    margin-top: 7px;
+    line-height: 2;
+    font-size: .8rem;
+  }
+
+  .check-icon {
+    display: flex;
+    gap: 1ch;
+    font-size: 1rem;
+    font-weight: 700;
   }
 }
