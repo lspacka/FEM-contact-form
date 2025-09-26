@@ -18,8 +18,8 @@
 
 @layer reset {
   *,
-  ::before,
-  ::after {
+  *::before,
+  *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -141,7 +141,7 @@
     gap: 1ch;
   }
 
-  /* checks the radio button regardless of where in the container its clicked */
+  /* checks the radio button regardless of where its container is clicked */
   .form-group:has([type="radio"]) {
     position: relative;
 

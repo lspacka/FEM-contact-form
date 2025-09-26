@@ -19,8 +19,8 @@ Users should be able to:
 
 ### Links
 
--  [Solution](https://your-solution-url.com)
--  [Live Site](https://your-live-site-url.com)
+-  [Solution](https://www.frontendmentor.io/solutions/contact-form-N9C5t9k0UL)
+-  [Live Site](https://lspacka.github.io/FEM-contact-form/)
 
 ### Built with
 
